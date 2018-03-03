@@ -1,0 +1,29 @@
+This code implements the DBSCAN for the specified datasets !
+We have created the Class CDBSCAN which will contains the data structures and methods to solve the clustering
+We have tried to follow the main structure of the definition of the algorithm in Wikipedia
+but we have made some changes to improve performance:
+
+   def __init__(self, eps = 0.3, MinPts = 2, reuse_computed = 1):
+
+    def set_X(self, X):  ### Intialize Global Variables for the process 
+        
+    def regionQuery(self,i, mode = 1):
+
+    def fit(self, X):  # Fit points X
+            
+    def expandCluster(self, i, NeighborPts):
+ 
+The data structures used here are:
+
+        self.cluster_P = -1 * np.ones((self.Nsam,1))  # It assings to every point a cluster (-1 = Noise)
+        It is used to check if we have to consider a point for a cluster. If it is noise, then
+        we do, if not, we dont.
+        self.samples_K = []  # Lists of lists. Each list inside constains the list of points of cluster i
+		# When we calculate the region of a point, we also put here for the future, just in case
+        # If the samples is assigned to a cluster, then we remove it
+
+        self.Nelem = self.X.getnnz(axis = 1)  # Number of elements in each sample
+        self.Already_Calculated_Regions = [[-1]] * self.Nsam. Estructure for precalculated
+        distances. It will be reused. When a sample is assigned, then its entry is removed.
+        
+        

@@ -1,0 +1,99 @@
+
+close all; clear all;
+
+lw = 3;
+%% The Prey
+
+if (0)
+    tspan = [0 50];
+    Y0 = [2 ; 2];
+    [Tout,Xout,Eout] = RK3(@DepPrey,tspan,Y0,h, mu);  % @DepPrey @VanDelPol
+
+    figure()
+    subplot(3,1,1);  
+    plot(Xout(:,2), Xout(:,1), 'color',rand(1,3), 'LineWidth',lw)
+    subplot(3,1,2);  
+    plot(Tout, Xout(:,1), 'color',rand(1,3), 'LineWidth',lw)
+    subplot(3,1,3);  
+    plot(Tout, Xout(:,2), 'color',rand(1,3), 'LineWidth',lw)
+end
+
+%% The VanderPol Comparison with ode15s
+
+
+%% Normalize by y(n)
+
+mu = 3;
+h = 0.01;
+tspan = [0 5*mu];
+Y0 = [2 ; 0];
+
+[Tout_RK3,Xout_RK3,Eout_RK3] = RK3(@VanDelPol,tspan,Y0,h, mu);  % @DepPrey @VanDelPol
+
+% method = 'DOPRI54';
+% solver = ERKSolverErrorEstimationParameters(method);
+% [Tout_RK4,Xout_RK4,Eout_RK4] = ERKSolverErrorEstimation(@VanDelPol,tspan,Y0,h,solver,mu);
+
+[Tout_ode15s,Xout_ode15s] = ode15s(@(t,y) VanDelPol(t,y,mu),tspan,Y0);
+
+figure()
+subplot(3,1,1);  
+hold on
+    plot(Xout_RK3(:,2), Xout_RK3(:,1), 'color',rand(1,3), 'LineWidth',lw)
+    plot(Xout_ode15s(:,2), Xout_ode15s(:,1), 'color',rand(1,3), 'LineWidth',lw)
+    legend('RK3','ode15s')
+    ylabel('x_2','FontSize',12,'FontWeight','bold')
+    xlabel('x_1','FontSize',12,'FontWeight','bold')
+hold off
+
+subplot(3,1,2); 
+hold on
+    plot(Tout_RK3, Xout_RK3(:,1), 'color',rand(1,3), 'LineWidth',lw)
+    plot(Tout_ode15s, Xout_ode15s(:,1), 'color',rand(1,3), 'LineWidth',lw)
+    legend('RK3','ode15s')
+    ylabel('x_1','FontSize',12,'FontWeight','bold')
+    xlabel('time','FontSize',12,'FontWeight','bold')
+hold off
+
+subplot(3,1,3);  
+hold on
+    plot(Tout_RK3, Xout_RK3(:,2), 'color',rand(1,3), 'LineWidth',lw)
+    plot(Tout_ode15s, Xout_ode15s(:,2), 'color',rand(1,3), 'LineWidth',lw)
+    legend('RK3','ode15s')
+    ylabel('x_2','FontSize',12,'FontWeight','bold')
+    xlabel('time','FontSize',12,'FontWeight','bold')
+hold off
+ 
+
+%% Error figure
+figure();
+
+subplot(3,1,1); title('Estimated Local Error 1');
+hold on
+    plot(Tout_RK3, abs(Eout_RK3(:,1)), 'color',rand(1,3), 'LineWidth',lw)
+    legend('Estimated Local Error', 'Actual Local Error', 'Normalized Local Error')
+    ylabel('log(|e_1|)','FontSize',12,'FontWeight','bold')
+    xlabel('time','FontSize',12,'FontWeight','bold')
+    
+hold off
+
+subplot(3,1,2); title('Estimated Local Error 2');
+hold on
+    plot(Tout_RK3, abs(Eout_RK3(:,2)), 'color',rand(1,3), 'LineWidth',lw)
+    legend('Estimated Local Error', 'Actual Local Error', 'Normalized Local Error')
+    ylabel('log(|e_2|)','FontSize',12,'FontWeight','bold')
+    xlabel('time','FontSize',12,'FontWeight','bold')
+    
+hold off
+
+subplot(3,1,3); title('Estimated Local Error');
+hold on
+    plot(Tout_RK3, sqrt(Eout_RK3(:,2).^2 + Eout_RK3(:,1).^2 ), 'color',rand(1,3), 'LineWidth',lw)
+    legend('Estimated Local Error', 'Actual Local Error', 'Normalized Local Error')
+    ylabel('log(|Error|)','FontSize',12,'FontWeight','bold')
+    xlabel('time','FontSize',12,'FontWeight','bold')
+    
+hold off
+
+
+
