@@ -1,0 +1,569 @@
+                                 The SAS System                                1
+                                             14:02 Wednesday, September 26, 2001
+
+                             The CONTENTS Procedure
+
+                              -----Directory-----
+
+           Libref:            STAT2                                 
+           Engine:            V8                                    
+           Physical Name:     /gbar/bohr/home2/g0411/g0411/stat2data
+           File Name:         /gbar/bohr/home2/g0411/g0411/stat2data
+           Inode Number:      100615680                             
+           Access Permission: rwxr-xr-x                             
+           Owner Name:        g0411                                 
+           File Size (bytes): 1024                                  
+
+
+                                        File
+               #  Name      Memtype     Size  Last Modified
+              ---------------------------------------------------
+               1  ANDBAN    DATA       16384   26SEP2001:14:02:49
+               2  ANDBAN2   DATA       16384   26SEP2001:14:02:49
+               3  ASTMA     DATA       16384   26SEP2001:14:02:49
+               4  IRIS      DATA       16384   26SEP2001:14:02:49
+               5  IRISCALI  DATA       16384   26SEP2001:14:02:49
+               6  IRISTEST  DATA       16384   26SEP2001:14:02:49
+               7  MINI1     DATA      106496   23SEP2001:22:10:11
+               8  OPG_E5    DATA       16384   26SEP2001:14:02:49
+               9  SUNDHED   DATA       16384   26SEP2001:14:02:49
+              10  XMPL3_5   DATA       16384   26SEP2001:14:02:49
+                                 The SAS System                                2
+                                             14:02 Wednesday, September 26, 2001
+
+                             The CONTENTS Procedure
+
+Data Set Name: STAT2.ANDBAN                             Observations:         27
+Member Type:   DATA                                     Variables:            5 
+Engine:        V8                                       Indexes:              0 
+Created:       14:02 Wednesday, September 26, 2001      Observation Length:   40
+Last Modified: 14:02 Wednesday, September 26, 2001      Deleted Observations: 0 
+Protection:                                             Compressed:           NO
+Data Set Type:                                          Sorted:               NO
+Label:                                                                          
+
+
+                  -----Engine/Host Dependent Information-----
+
+Data Set Page Size:         8192                                                
+Number of Data Set Pages:   1                                                   
+First Data Page:            1                                                   
+Max Obs per Page:           203                                                 
+Obs in First Data Page:     27                                                  
+Number of Data Set Repairs: 0                                                   
+File Name:                  /gbar/bohr/home2/g0411/g0411/                       
+                            stat2data/andban.sas7bdat                           
+Release Created:            8.0101M0                                            
+Host Created:               SunOS                                               
+Inode Number:               100615693                                           
+Access Permission:          rw-r--r--                                           
+Owner Name:                 g0411                                               
+File Size (bytes):          16384                                               
+
+
+             -----Alphabetic List of Variables and Attributes-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    x1          Num       8      0
+                      2    x2          Num       8      8
+                      3    x3          Num       8     16
+                      5    x1x2        Num       8     32
+                      4    y           Num       8     24
+
+
+                    -----Variables Ordered by Position-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    x1          Num       8      0
+                      2    x2          Num       8      8
+                      3    x3          Num       8     16
+                      4    y           Num       8     24
+                      5    x1x2        Num       8     32
+                                 The SAS System                                3
+                                             14:02 Wednesday, September 26, 2001
+
+                             The CONTENTS Procedure
+
+Data Set Name: STAT2.ANDBAN2                            Observations:         27
+Member Type:   DATA                                     Variables:            10
+Engine:        V8                                       Indexes:              0 
+Created:       14:02 Wednesday, September 26, 2001      Observation Length:   80
+Last Modified: 14:02 Wednesday, September 26, 2001      Deleted Observations: 0 
+Protection:                                             Compressed:           NO
+Data Set Type:                                          Sorted:               NO
+Label:                                                                          
+
+
+                  -----Engine/Host Dependent Information-----
+
+Data Set Page Size:         8192                                                
+Number of Data Set Pages:   1                                                   
+First Data Page:            1                                                   
+Max Obs per Page:           101                                                 
+Obs in First Data Page:     27                                                  
+Number of Data Set Repairs: 0                                                   
+File Name:                  /gbar/bohr/home2/g0411/g0411/                       
+                            stat2data/andban2.sas7bdat                          
+Release Created:            8.0101M0                                            
+Host Created:               SunOS                                               
+Inode Number:               100615703                                           
+Access Permission:          rw-r--r--                                           
+Owner Name:                 g0411                                               
+File Size (bytes):          16384                                               
+
+
+              -----Alphabetic List of Variables and Attributes-----
+ 
+                       #    Variable    Type    Len    Pos
+                      ------------------------------------
+                       1    x1          Num       8      0
+                       2    x2          Num       8      8
+                       3    x3          Num       8     16
+                       5    x1x1        Num       8     32
+                       6    x1x2        Num       8     40
+                       7    x1x3        Num       8     48
+                       8    x2x2        Num       8     56
+                       9    x2x3        Num       8     64
+                      10    x3x3        Num       8     72
+                       4    y           Num       8     24
+
+
+                     -----Variables Ordered by Position-----
+ 
+                       #    Variable    Type    Len    Pos
+                      ------------------------------------
+                       1    x1          Num       8      0
+                       2    x2          Num       8      8
+                       3    x3          Num       8     16
+                       4    y           Num       8     24
+                       5    x1x1        Num       8     32
+                       6    x1x2        Num       8     40
+                       7    x1x3        Num       8     48
+                       8    x2x2        Num       8     56
+                       9    x2x3        Num       8     64
+                      10    x3x3        Num       8     72
+                                 The SAS System                                4
+                                             14:02 Wednesday, September 26, 2001
+
+                             The CONTENTS Procedure
+
+Data Set Name: STAT2.ASTMA                              Observations:         6 
+Member Type:   DATA                                     Variables:            5 
+Engine:        V8                                       Indexes:              0 
+Created:       14:02 Wednesday, September 26, 2001      Observation Length:   40
+Last Modified: 14:02 Wednesday, September 26, 2001      Deleted Observations: 0 
+Protection:                                             Compressed:           NO
+Data Set Type:                                          Sorted:               NO
+Label:                                                                          
+
+
+                  -----Engine/Host Dependent Information-----
+
+Data Set Page Size:         8192                                                
+Number of Data Set Pages:   1                                                   
+First Data Page:            1                                                   
+Max Obs per Page:           203                                                 
+Obs in First Data Page:     6                                                   
+Number of Data Set Repairs: 0                                                   
+File Name:                  /gbar/bohr/home2/g0411/g0411/                       
+                            stat2data/astma.sas7bdat                            
+Release Created:            8.0101M0                                            
+Host Created:               SunOS                                               
+Inode Number:               100615685                                           
+Access Permission:          rw-r--r--                                           
+Owner Name:                 g0411                                               
+File Size (bytes):          16384                                               
+
+
+             -----Alphabetic List of Variables and Attributes-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    middel      Char      8     32
+                      2    respuge1    Num       8      0
+                      3    respuge2    Num       8      8
+                      4    respuge3    Num       8     16
+                      5    respuge4    Num       8     24
+
+
+                    -----Variables Ordered by Position-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    middel      Char      8     32
+                      2    respuge1    Num       8      0
+                      3    respuge2    Num       8      8
+                      4    respuge3    Num       8     16
+                      5    respuge4    Num       8     24
+                                 The SAS System                                5
+                                             14:02 Wednesday, September 26, 2001
+
+                             The CONTENTS Procedure
+
+Data Set Name: STAT2.IRIS                              Observations:         150
+Member Type:   DATA                                    Variables:            5  
+Engine:        V8                                      Indexes:              0  
+Created:       14:02 Wednesday, September 26, 2001     Observation Length:   40 
+Last Modified: 14:02 Wednesday, September 26, 2001     Deleted Observations: 0  
+Protection:                                            Compressed:           NO 
+Data Set Type:                                         Sorted:               NO 
+Label:                                                                          
+
+
+                  -----Engine/Host Dependent Information-----
+
+Data Set Page Size:         8192                                                
+Number of Data Set Pages:   1                                                   
+First Data Page:            1                                                   
+Max Obs per Page:           203                                                 
+Obs in First Data Page:     150                                                 
+Number of Data Set Repairs: 0                                                   
+File Name:                  /gbar/bohr/home2/g0411/g0411/stat2data/iris.sas7bdat
+Release Created:            8.0101M0                                            
+Host Created:               SunOS                                               
+Inode Number:               100615686                                           
+Access Permission:          rw-r--r--                                           
+Owner Name:                 g0411                                               
+File Size (bytes):          16384                                               
+
+
+             -----Alphabetic List of Variables and Attributes-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      3    petallen    Num       8     16
+                      4    petalwid    Num       8     24
+                      1    sepallen    Num       8      0
+                      2    sepalwid    Num       8      8
+                      5    species     Char      8     32
+
+
+                    -----Variables Ordered by Position-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    sepallen    Num       8      0
+                      2    sepalwid    Num       8      8
+                      3    petallen    Num       8     16
+                      4    petalwid    Num       8     24
+                      5    species     Char      8     32
+                                 The SAS System                                6
+                                             14:02 Wednesday, September 26, 2001
+
+                             The CONTENTS Procedure
+
+Data Set Name: STAT2.IRISCALI                           Observations:         75
+Member Type:   DATA                                     Variables:            5 
+Engine:        V8                                       Indexes:              0 
+Created:       14:02 Wednesday, September 26, 2001      Observation Length:   40
+Last Modified: 14:02 Wednesday, September 26, 2001      Deleted Observations: 0 
+Protection:                                             Compressed:           NO
+Data Set Type:                                          Sorted:               NO
+Label:                                                                          
+
+
+                  -----Engine/Host Dependent Information-----
+
+Data Set Page Size:         8192                                                
+Number of Data Set Pages:   1                                                   
+First Data Page:            1                                                   
+Max Obs per Page:           203                                                 
+Obs in First Data Page:     75                                                  
+Number of Data Set Repairs: 0                                                   
+File Name:                  /gbar/bohr/home2/g0411/g0411/                       
+                            stat2data/iriscali.sas7bdat                         
+Release Created:            8.0101M0                                            
+Host Created:               SunOS                                               
+Inode Number:               100615687                                           
+Access Permission:          rw-r--r--                                           
+Owner Name:                 g0411                                               
+File Size (bytes):          16384                                               
+
+
+             -----Alphabetic List of Variables and Attributes-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      3    petallen    Num       8     16
+                      4    petalwid    Num       8     24
+                      1    sepallen    Num       8      0
+                      2    sepalwid    Num       8      8
+                      5    species     Char      8     32
+
+
+                    -----Variables Ordered by Position-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    sepallen    Num       8      0
+                      2    sepalwid    Num       8      8
+                      3    petallen    Num       8     16
+                      4    petalwid    Num       8     24
+                      5    species     Char      8     32
+                                 The SAS System                                7
+                                             14:02 Wednesday, September 26, 2001
+
+                             The CONTENTS Procedure
+
+Data Set Name: STAT2.IRISTEST                           Observations:         75
+Member Type:   DATA                                     Variables:            5 
+Engine:        V8                                       Indexes:              0 
+Created:       14:02 Wednesday, September 26, 2001      Observation Length:   40
+Last Modified: 14:02 Wednesday, September 26, 2001      Deleted Observations: 0 
+Protection:                                             Compressed:           NO
+Data Set Type:                                          Sorted:               NO
+Label:                                                                          
+
+
+                  -----Engine/Host Dependent Information-----
+
+Data Set Page Size:         8192                                                
+Number of Data Set Pages:   1                                                   
+First Data Page:            1                                                   
+Max Obs per Page:           203                                                 
+Obs in First Data Page:     75                                                  
+Number of Data Set Repairs: 0                                                   
+File Name:                  /gbar/bohr/home2/g0411/g0411/                       
+                            stat2data/iristest.sas7bdat                         
+Release Created:            8.0101M0                                            
+Host Created:               SunOS                                               
+Inode Number:               100615688                                           
+Access Permission:          rw-r--r--                                           
+Owner Name:                 g0411                                               
+File Size (bytes):          16384                                               
+
+
+             -----Alphabetic List of Variables and Attributes-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      3    petallen    Num       8     16
+                      4    petalwid    Num       8     24
+                      1    sepallen    Num       8      0
+                      2    sepalwid    Num       8      8
+                      5    species     Char      8     32
+
+
+                    -----Variables Ordered by Position-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    sepallen    Num       8      0
+                      2    sepalwid    Num       8      8
+                      3    petallen    Num       8     16
+                      4    petalwid    Num       8     24
+                      5    species     Char      8     32
+                                 The SAS System                                8
+                                             14:02 Wednesday, September 26, 2001
+
+                             The CONTENTS Procedure
+
+Data Set Name: STAT2.MINI1                            Observations:         2244
+Member Type:   DATA                                   Variables:            4   
+Engine:        V8                                     Indexes:              0   
+Created:       22:01 Sunday, September 23, 2001       Observation Length:   40  
+Last Modified: 22:01 Sunday, September 23, 2001       Deleted Observations: 0   
+Protection:                                           Compressed:           NO  
+Data Set Type:                                        Sorted:               NO  
+Label:                                                                          
+
+
+                  -----Engine/Host Dependent Information-----
+
+Data Set Page Size:         8192                                                
+Number of Data Set Pages:   12                                                  
+First Data Page:            1                                                   
+Max Obs per Page:           203                                                 
+Obs in First Data Page:     169                                                 
+Number of Data Set Repairs: 0                                                   
+File Name:                  /gbar/bohr/home2/g0411/g0411/                       
+                            stat2data/mini1.sas7bdat                            
+Release Created:            8.0101M0                                            
+Host Created:               HP-UX                                               
+Inode Number:               100615702                                           
+Access Permission:          rw-r--r--                                           
+Owner Name:                 g0411                                               
+File Size (bytes):          106496                                              
+
+
+             -----Alphabetic List of Variables and Attributes-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    rock        Char     10     24
+                      2    tm1         Num       8      0
+                      3    tm3         Num       8      8
+                      4    tm7         Num       8     16
+
+
+                    -----Variables Ordered by Position-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    rock        Char     10     24
+                      2    tm1         Num       8      0
+                      3    tm3         Num       8      8
+                      4    tm7         Num       8     16
+                                 The SAS System                                9
+                                             14:02 Wednesday, September 26, 2001
+
+                             The CONTENTS Procedure
+
+Data Set Name: STAT2.OPG_E5                             Observations:         54
+Member Type:   DATA                                     Variables:            5 
+Engine:        V8                                       Indexes:              0 
+Created:       14:02 Wednesday, September 26, 2001      Observation Length:   40
+Last Modified: 14:02 Wednesday, September 26, 2001      Deleted Observations: 0 
+Protection:                                             Compressed:           NO
+Data Set Type:                                          Sorted:               NO
+Label:                                                                          
+
+
+                  -----Engine/Host Dependent Information-----
+
+Data Set Page Size:         8192                                                
+Number of Data Set Pages:   1                                                   
+First Data Page:            1                                                   
+Max Obs per Page:           203                                                 
+Obs in First Data Page:     54                                                  
+Number of Data Set Repairs: 0                                                   
+File Name:                  /gbar/bohr/home2/g0411/g0411/                       
+                            stat2data/opg_e5.sas7bdat                           
+Release Created:            8.0101M0                                            
+Host Created:               SunOS                                               
+Inode Number:               100615689                                           
+Access Permission:          rw-r--r--                                           
+Owner Name:                 g0411                                               
+File Size (bytes):          16384                                               
+
+
+             -----Alphabetic List of Variables and Attributes-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    aar         Num       8      0
+                      2    kvartal     Num       8      8
+                      5    lagerbev    Num       8     32
+                      4    selskab     Num       8     24
+                      3    stoerrel    Num       8     16
+
+
+                    -----Variables Ordered by Position-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    aar         Num       8      0
+                      2    kvartal     Num       8      8
+                      3    stoerrel    Num       8     16
+                      4    selskab     Num       8     24
+                      5    lagerbev    Num       8     32
+                                 The SAS System                               10
+                                             14:02 Wednesday, September 26, 2001
+
+                             The CONTENTS Procedure
+
+Data Set Name: STAT2.SUNDHED                            Observations:         31
+Member Type:   DATA                                     Variables:            7 
+Engine:        V8                                       Indexes:              0 
+Created:       14:02 Wednesday, September 26, 2001      Observation Length:   56
+Last Modified: 14:02 Wednesday, September 26, 2001      Deleted Observations: 0 
+Protection:                                             Compressed:           NO
+Data Set Type:                                          Sorted:               NO
+Label:                                                                          
+
+
+                  -----Engine/Host Dependent Information-----
+
+Data Set Page Size:         8192                                                
+Number of Data Set Pages:   1                                                   
+First Data Page:            1                                                   
+Max Obs per Page:           145                                                 
+Obs in First Data Page:     31                                                  
+Number of Data Set Repairs: 0                                                   
+File Name:                  /gbar/bohr/home2/g0411/g0411/                       
+                            stat2data/sundhed.sas7bdat                          
+Release Created:            8.0101M0                                            
+Host Created:               SunOS                                               
+Inode Number:               100615690                                           
+Access Permission:          rw-r--r--                                           
+Owner Name:                 g0411                                               
+File Size (bytes):          16384                                               
+
+
+             -----Alphabetic List of Variables and Attributes-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    alder       Num       8      0
+                      5    hvilpuls    Num       8     32
+                      3    ilt         Num       8     16
+                      4    loebetid    Num       8     24
+                      6    loebpuls    Num       8     40
+                      7    maxpuls     Num       8     48
+                      2    vegt        Num       8      8
+
+
+                    -----Variables Ordered by Position-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    alder       Num       8      0
+                      2    vegt        Num       8      8
+                      3    ilt         Num       8     16
+                      4    loebetid    Num       8     24
+                      5    hvilpuls    Num       8     32
+                      6    loebpuls    Num       8     40
+                      7    maxpuls     Num       8     48
+                                 The SAS System                               11
+                                             14:02 Wednesday, September 26, 2001
+
+                             The CONTENTS Procedure
+
+Data Set Name: STAT2.XMPL3_5                            Observations:         7 
+Member Type:   DATA                                     Variables:            4 
+Engine:        V8                                       Indexes:              0 
+Created:       14:02 Wednesday, September 26, 2001      Observation Length:   32
+Last Modified: 14:02 Wednesday, September 26, 2001      Deleted Observations: 0 
+Protection:                                             Compressed:           NO
+Data Set Type:                                          Sorted:               NO
+Label:                                                                          
+
+
+                  -----Engine/Host Dependent Information-----
+
+Data Set Page Size:         8192                                                
+Number of Data Set Pages:   1                                                   
+First Data Page:            1                                                   
+Max Obs per Page:           254                                                 
+Obs in First Data Page:     7                                                   
+Number of Data Set Repairs: 0                                                   
+File Name:                  /gbar/bohr/home2/g0411/g0411/                       
+                            stat2data/xmpl3_5.sas7bdat                          
+Release Created:            8.0101M0                                            
+Host Created:               SunOS                                               
+Inode Number:               100615691                                           
+Access Permission:          rw-r--r--                                           
+Owner Name:                 g0411                                               
+File Size (bytes):          16384                                               
+
+
+             -----Alphabetic List of Variables and Attributes-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    bakterie    Num       8      0
+                      2    buffer      Num       8      8
+                      3    forsoeg     Num       8     16
+                      4    udbytte     Num       8     24
+
+
+                    -----Variables Ordered by Position-----
+ 
+                      #    Variable    Type    Len    Pos
+                      -----------------------------------
+                      1    bakterie    Num       8      0
+                      2    buffer      Num       8      8
+                      3    forsoeg     Num       8     16
+                      4    udbytte     Num       8     24

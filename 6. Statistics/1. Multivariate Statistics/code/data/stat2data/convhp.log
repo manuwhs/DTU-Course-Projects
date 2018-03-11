@@ -1,0 +1,325 @@
+1                                                          The SAS System                        14:02 Wednesday, September 26, 2001
+
+NOTE: Copyright (c) 1999-2000 by SAS Institute Inc., Cary, NC, USA. 
+NOTE: SAS (r) Proprietary Software Release 8.1 (TS1M0)
+      Licensed to INSTITUT FOR MATEMATISK MODELLERING, Site 0083972010.
+NOTE: This session is executing on the SunOS 5.8 platform.
+
+
+
+
+This message is contained in the SAS news file, and is presented upon
+initialization.  Edit the files "news" in the "misc/base" directory to
+display site-specific news and information in the program log.
+The command line option "-nonews" will prevent this display.
+
+
+
+NOTE: SAS initialization used:
+      real time           0.12 seconds
+      cpu time            0.05 seconds
+      
+
+NOTE: AUTOEXEC processing beginning; file is /gbar/bohr/home2/g0411/g0411/autoexec.sas.
+
+NOTE: Libref STAT2 was successfully assigned as follows: 
+      Engine:        V8 
+      Physical Name: /gbar/bohr/home2/g0411/g0411/stat2data
+NOTE: Libname HERE refers to the same physical library as STAT2.
+NOTE: Libref HERE was successfully assigned as follows: 
+      Engine:        V8 
+      Physical Name: /gbar/bohr/home2/g0411/g0411/stat2data
+
+NOTE: AUTOEXEC processing completed.
+
+1          filename andban 'andban.fil';
+2          filename andban2 'andban2.fil';
+3          filename astma 'astma.fil';
+4          filename iris 'iris.fil';
+5          filename iriscali 'iriscali.fil';
+6          filename iristest 'iristest.fil';
+7          filename opgze5 'opg_e5.fil';
+8          filename sundhed 'sundhed.fil';
+9          filename xmpl3z5 'xmpl3_5.fil';
+10         libname stat2 '.';
+NOTE: Libname STAT2 refers to the same physical library as HERE.
+NOTE: Libref STAT2 was successfully assigned as follows: 
+      Engine:        V8 
+      Physical Name: /gbar/bohr/home2/g0411/g0411/stat2data
+11         
+12         data stat2.andban;
+13         infile  andban;
+14                 input
+15                   x1
+16                   x2
+17                   x3
+18                   y
+19                   x1x2;
+20         
+
+NOTE: The infile ANDBAN is:
+      File Name=/gbar/bohr/home2/g0411/g0411/stat2data/andban.fil,
+      Owner Name=g0411,Group Name=g0411,
+      Access Permission=rw-r--r--,
+      File Size (bytes)=696
+
+2                                The SAS System
+                                             14:02 Wednesday, September 26, 2001
+
+NOTE: 28 records were read from the infile ANDBAN.
+      The minimum record length was 0.
+      The maximum record length was 27.
+NOTE: SAS went to a new line when INPUT statement reached past the end of a 
+      line.
+NOTE: The data set STAT2.ANDBAN has 27 observations and 5 variables.
+NOTE: DATA statement used:
+      real time           0.02 seconds
+      cpu time            0.02 seconds
+      
+
+21         data stat2.andban2;
+22         infile  andban2;
+23                 input
+24                   x1
+25                   x2
+26                   x3
+27                   y
+28                   x1x1
+29                   x1x2
+30                   x1x3
+31                   x2x2
+32                   x2x3
+33                   x3x3;
+34         
+
+NOTE: The infile ANDBAN2 is:
+      File Name=/gbar/bohr/home2/g0411/g0411/stat2data/andban2.fil,
+      Owner Name=g0411,Group Name=g0411,
+      Access Permission=rw-r--r--,
+      File Size (bytes)=1578
+
+NOTE: 28 records were read from the infile ANDBAN2.
+      The minimum record length was 0.
+      The maximum record length was 63.
+NOTE: SAS went to a new line when INPUT statement reached past the end of a 
+      line.
+NOTE: The data set STAT2.ANDBAN2 has 27 observations and 10 variables.
+NOTE: DATA statement used:
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+35         data stat2.astma;
+36         infile  astma;
+37                 input
+38                   middel $
+39                   respuge1
+40                   respuge2
+41                   respuge3
+42                   respuge4;
+43         
+
+NOTE: The infile ASTMA is:
+      File Name=/gbar/bohr/home2/g0411/g0411/stat2data/astma.fil,
+      Owner Name=g0411,Group Name=g0411,
+      Access Permission=rw-r--r--,
+      File Size (bytes)=89
+
+NOTE: 7 records were read from the infile ASTMA.
+      The minimum record length was 0.
+      The maximum record length was 15.
+3                                The SAS System
+                                             14:02 Wednesday, September 26, 2001
+
+NOTE: SAS went to a new line when INPUT statement reached past the end of a 
+      line.
+NOTE: The data set STAT2.ASTMA has 6 observations and 5 variables.
+NOTE: DATA statement used:
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+44         data stat2.iris;
+45         infile  iris;
+46                 input
+47                   sepallen
+48                   sepalwid
+49                   petallen
+50                   petalwid
+51                   species $;
+52         
+
+NOTE: The infile IRIS is:
+      File Name=/gbar/bohr/home2/g0411/g0411/stat2data/iris.fil,
+      Owner Name=g0411,Group Name=g0411,
+      Access Permission=rw-r--r--,
+      File Size (bytes)=3151
+
+NOTE: 151 records were read from the infile IRIS.
+      The minimum record length was 0.
+      The maximum record length was 22.
+NOTE: SAS went to a new line when INPUT statement reached past the end of a 
+      line.
+NOTE: The data set STAT2.IRIS has 150 observations and 5 variables.
+NOTE: DATA statement used:
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+53         data stat2.iriscali;
+54         infile  iriscali;
+55                 input
+56                   sepallen
+57                   sepalwid
+58                   petallen
+59                   petalwid
+60                   species $;
+61         
+
+NOTE: The infile IRISCALI is:
+      File Name=/gbar/bohr/home2/g0411/g0411/stat2data/iriscali.fil,
+      Owner Name=g0411,Group Name=g0411,
+      Access Permission=rw-r--r--,
+      File Size (bytes)=1576
+
+NOTE: 76 records were read from the infile IRISCALI.
+      The minimum record length was 0.
+      The maximum record length was 22.
+NOTE: SAS went to a new line when INPUT statement reached past the end of a 
+      line.
+NOTE: The data set STAT2.IRISCALI has 75 observations and 5 variables.
+NOTE: DATA statement used:
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+4                                The SAS System
+                                             14:02 Wednesday, September 26, 2001
+
+62         data stat2.iristest;
+63         infile  iristest;
+64                 input
+65                   sepallen
+66                   sepalwid
+67                   petallen
+68                   petalwid
+69                   species $;
+70         
+
+NOTE: The infile IRISTEST is:
+      File Name=/gbar/bohr/home2/g0411/g0411/stat2data/iristest.fil,
+      Owner Name=g0411,Group Name=g0411,
+      Access Permission=rw-r--r--,
+      File Size (bytes)=1576
+
+NOTE: 76 records were read from the infile IRISTEST.
+      The minimum record length was 0.
+      The maximum record length was 22.
+NOTE: SAS went to a new line when INPUT statement reached past the end of a 
+      line.
+NOTE: The data set STAT2.IRISTEST has 75 observations and 5 variables.
+NOTE: DATA statement used:
+      real time           0.01 seconds
+      cpu time            0.02 seconds
+      
+
+71         data stat2.opg_e5;
+72         infile  opgze5;
+73                 input
+74                   aar
+75                   kvartal
+76                   stoerrel
+77                   selskab
+78                   lagerbev;
+79         
+
+NOTE: The infile OPGZE5 is:
+      File Name=/gbar/bohr/home2/g0411/g0411/stat2data/opg_e5.fil,
+      Owner Name=g0411,Group Name=g0411,
+      Access Permission=rw-r--r--,
+      File Size (bytes)=859
+
+NOTE: 55 records were read from the infile OPGZE5.
+      The minimum record length was 0.
+      The maximum record length was 15.
+NOTE: SAS went to a new line when INPUT statement reached past the end of a 
+      line.
+NOTE: The data set STAT2.OPG_E5 has 54 observations and 5 variables.
+NOTE: DATA statement used:
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+80         data stat2.sundhed;
+81         infile  sundhed;
+82                 input
+83                   alder
+84                   vegt
+85                   ilt
+86                   loebetid
+87                   hvilpuls
+5                                The SAS System
+                                             14:02 Wednesday, September 26, 2001
+
+88                   loebpuls
+89                   maxpuls;
+90         
+
+NOTE: The infile SUNDHED is:
+      File Name=/gbar/bohr/home2/g0411/g0411/stat2data/sundhed.fil,
+      Owner Name=g0411,Group Name=g0411,
+      Access Permission=rw-r--r--,
+      File Size (bytes)=1005
+
+NOTE: 32 records were read from the infile SUNDHED.
+      The minimum record length was 0.
+      The maximum record length was 32.
+NOTE: SAS went to a new line when INPUT statement reached past the end of a 
+      line.
+NOTE: The data set STAT2.SUNDHED has 31 observations and 7 variables.
+NOTE: DATA statement used:
+      real time           0.01 seconds
+      cpu time            0.01 seconds
+      
+
+91         data stat2.xmpl3_5;
+92         infile  xmpl3z5;
+93                 input
+94                   bakterie
+95                   buffer
+96                   forsoeg
+97                   udbytte;
+98         
+
+NOTE: The infile XMPL3Z5 is:
+      File Name=/gbar/bohr/home2/g0411/g0411/stat2data/xmpl3_5.fil,
+      Owner Name=g0411,Group Name=g0411,
+      Access Permission=rw-r--r--,
+      File Size (bytes)=64
+
+NOTE: 8 records were read from the infile XMPL3Z5.
+      The minimum record length was 0.
+      The maximum record length was 9.
+NOTE: SAS went to a new line when INPUT statement reached past the end of a 
+      line.
+NOTE: The data set STAT2.XMPL3_5 has 7 observations and 4 variables.
+NOTE: DATA statement used:
+      real time           0.01 seconds
+      cpu time            0.00 seconds
+      
+
+99         proc contents data=stat2._all_ position;
+100        
+101        run;
+
+NOTE: PROCEDURE CONTENTS used:
+      real time           0.08 seconds
+      cpu time            0.05 seconds
+      
+NOTE: The PROCEDURE CONTENTS printed pages 1-11.
+
+NOTE: SAS Institute Inc., SAS Campus Drive, Cary, NC USA 27513-2414
+NOTE: The SAS System used:
+      real time           0.42 seconds
+      cpu time            0.19 seconds
+      
