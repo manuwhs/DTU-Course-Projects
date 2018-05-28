@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Results</title>
+    <link rel="stylesheet" type="text/css" href="./static/content/highcharts_style.css">
+</head>
+<body>
+    {% extends "layout.html" %}
+    {% block content %}
+    Here I add javaScript code:
+    <div id={{ chartID|safe }} class="chart" style="height: 500px"></div>
+    <script>
+	    var chart_id = {{ chartID|safe }}
+	    var series = {{ series|safe }}
+	    var title = {{ title|safe }}
+	    var xAxis = {{ xAxis|safe }}
+	    var yAxis = {{ yAxis|safe }}
+	    var chart = {{ chart|safe }}
+    </script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script src="../static/js/graph.js"></script>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <!--<link rel="stylesheet" type="text/css" href="./static/content/highcharts_style.css">-->
+</head>
+<body>
+    {% extends "layout.html" %}
+    {% block content %}
+    <h3 style="margin-bottom:1cm;">Results of the cleaning procedure:</h3>
+
+    <!-- temperature chart -->
+    <div style="margin-bottom:1cm;" id="temp_chart"></div>
+    <!-- phVal chart -->
+    <div style="margin-bottom:1cm;" id="ph_chart"></div>
+    <!-- pressure chart -->
+    <div style="margin-bottom:1cm;" id="press_chart"></div>
+    <!-- conductivity chart -->
+    <div style="margin-bottom:1cm;" id="conduc_chart"></div>
+
+    <!-- Live temp chart
+    <div style="margin-bottom:1cm;" id="data-container"></div> -->
+
+    <script src="http://code.highcharts.com/highcharts.js"></script>
+    <script>
+        var temp_data = {{ temp_data }}
+        var ph_data = {{ ph_data }}
+        var press_data = {{ press_data }}
+        var conduc_data = {{ conduc_data }}
+        console.log(temp_data)
+        console.log(ph_data)
+        console.log(press_data)
+        console.log(conduc_data)
+    </script>
+    <script src="../static/js/tempchart.js" charset="utf-8"></script>
+    <script src="../static/js/presschart.js" charset="utf-8"></script>
+    <script src="../static/js/phchart.js" charset="utf-8"></script>
+    <script src="../static/js/conducchart.js" charset="utf-8"></script>
+    <script src="../static/js/livetemp.js" charset="utf-8"></script>
+
+    {% endblock %}
+</body>
+    </html>

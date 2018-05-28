@@ -1,0 +1,15 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Clear</title>
+</head>
+<body>
+    {% extends "layout.html" %}
+    {% block content %}
+    <h3>You just created a new database, collection and document. Your old votes have been deleted.</h3>
+    <p><a href="{{ url_for('create') }}" class="btn btn-primary btn-large">Vote &raquo;</a></p>
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,236 @@
+import inspect
+from collections import deque
+
+import itertools
+
+from .milestones import config_ready
+
+
+class TGConfigError(Exception):pass
+
+
+def coerce_options(options, converters):
+    """Convert some configuration options to expected types.
+
+    To replace given options with the converted values
+    in a dictionary you might do::
+
+        conf.update(coerce_options(conf, {
+            'debug': asbool,
+            'serve_static': asbool,
+            'auto_reload_templates': asbool
+        }))
+    """
+    converted_options = {}
+    for option, converter in converters.items():
+        if option in options:
+            converted_options[option] = converter(options[option])
+    return converted_options
+
+
+def coerce_config(configuration, prefix, converters):
+    """Extracts a set of options with a common prefix and converts them.
+
+    To extract all options starting with ``trace_errors.`` from
+    the ``conf`` dictionary and conver them::
+
+        trace_errors_config = coerce_config(conf, 'trace_errors.', {
+            'smtp_use_tls': asbool,
+            'dump_request_size': asint,
+            'dump_request': asbool,
+            'dump_local_frames': asbool,
+            'dump_local_frames_count': asint
+        })
+    """
+
+    options = dict((key[len(prefix):], configuration[key])
+                    for key in configuration if key.startswith(prefix))
+    options.update(coerce_options(options, converters))
+    return options
+
+def get_partial_dict(prefix, dictionary, container_type=dict):
+    """Given a dictionary and a prefix, return a Bunch, with just items
+    that start with prefix
+
+    The returned dictionary will have 'prefix.' stripped so::
+
+        get_partial_dict('prefix', {'prefix.xyz':1, 'prefix.zyx':2, 'xy':3})
+
+    would return::
+
+        {'xyz':1,'zyx':2}
+    """
+
+    match = prefix + "."
+    n = len(match)
+
+    new_dict = container_type(((key[n:], dictionary[key])
+                                for key in dictionary
+                                if key.startswith(match)))
+    if new_dict:
+        return new_dict
+    else:
+        raise AttributeError(prefix)
+
+
+class GlobalConfigurable(object):
+    """Defines a configurable TurboGears object with a global default instance.
+
+    GlobalConfigurable are objects which the user can create multiple instances to use
+    in its own application or third party module, but for which TurboGears provides
+    a default instance.
+
+    Common examples are ``tg.flash`` and the default JSON encoder for which
+    TurboGears provides default instances of ``.TGFlash`` and ``.JSONEncoder`` classes
+    but users can create their own.
+
+    While user created versions are configured calling the :meth:`.GlobalConfigurable.configure`
+    method, global versions are configured by :class:`.AppConfig` which configures them when
+    ``config_ready`` milestone is reached.
+
+    """
+    CONFIG_NAMESPACE = None
+    CONFIG_OPTIONS = {}
+
+    def configure(self, **options):
+        """Expected to be implemented by each object to proceed with actualy configuration.
+
+        Configure method will receive all the options whose name starts with ``CONFIG_NAMESPACE``
+        (example ``json.isodates`` has ``json.`` namespace).
+
+        If ``CONFIG_OPTIONS`` is specified options values will be converted with
+        :func:`coerce_config` passing ``CONFIG_OPTIONS`` as the ``converters`` dictionary.
+
+        """
+        raise NotImplementedError('GlobalConfigurable objects must implement a configure method')
+
+    @classmethod
+    def create_global(cls):
+        """Creates a global instance which configuration will be bound to :class:`.AppConfig`."""
+        if cls.CONFIG_NAMESPACE is None:
+            raise TGConfigError('Must specify a CONFIG_NAMESPACE attribute in class for the'
+                                'namespace used by all configuration options.')
+
+        obj = cls()
+        config_ready.register(obj._load_config, persist_on_reset=True)
+        return obj
+
+    def _load_config(self):
+        from tg.configuration import config
+        self.configure(**coerce_config(config, self.CONFIG_NAMESPACE,  self.CONFIG_OPTIONS))
+
+
+class DependenciesList(object):
+    """Manages a list of entries which might depend one from the other.
+
+    This powers :meth:`.AppConfig.register_wrapper` and other features in
+    TurboGears2, making possible to register the wrappers right after
+    other wrappers or at the end of the wrappers chain.
+
+    .. note:: This is highly inefficient as it is only meant to run at configuration time,
+              a new implementation will probably be provided based on heapq in the future.
+    """
+    #: Those are the heads of the dependencies tree
+    #:  - ``False`` means before everything else
+    #:  - ``None`` means in the middle.
+    #:  - ``True`` means after everything else.
+    DEPENDENCY_HEADS = (False, None, True)
+
+    def __init__(self, *entries):
+        self._dependencies = {}
+        self._ordered_elements = []
+        self._inserted_keys = []
+
+        for entry in entries:
+            self.add(entry)
+
+    def add(self, entry, key=None, after=None):
+        """Adds an entry to the dependencies list.
+
+        :param entry: Entry that must be added to the list.
+        :param str|type|None key: An identifier of the object being inserted.
+                                  This is used by later insertions as ``after`` argument
+                                  to specify after which object the new one should be inserted.
+        :param str|type|None|False|True after: After which element this one should be inserted.
+                                               This is the ``key`` of a previously inserted item.
+                                               In case no item with ``key`` has been inserted, the
+                                               entry will be inserted in normal order of insertion.
+                                               Also accepts one of
+                                               :attr:`.DependenciesList.DEPENDENCY_HEADS` as key
+                                               to add entries at begin or end of the list.
+        """
+        if key is None:
+            if inspect.isclass(entry):
+                key = entry.__name__
+            else:
+                # Inserting an object without a key would lead to unexpected ordering.
+                # we cannot use the object class as the key would not be unique across
+                # different instances.
+                raise ValueError('Inserting instances without a key is not allowed')
+
+        if after not in self.DEPENDENCY_HEADS and not isinstance(after, str):
+            if inspect.isclass(after):
+                after = after.__name__
+            else:
+                raise ValueError('after parameter must be a string, a class or a special value')
+
+        self._inserted_keys.append(key)
+        self._dependencies.setdefault(after, []).append((key, entry))
+        self._resolve_ordering()
+
+    def __repr__(self):
+        return '<DependenciesList %s>' % [x[0] for x in self._ordered_elements]
+
+    def __iter__(self):
+        return iter(self._ordered_elements)
+
+    def values(self):
+        """Returns all the inserted values without their key as a generator"""
+        return (x[1]for x in self._ordered_elements)
+
+    def replace(self, key, newvalue):
+        """Replaces entry associated to key with a new one.
+
+        :param newvalue: Entry that must replace the previous value.
+        :param str|type key: An identifier of the object being inserted.
+        """
+        if not isinstance(key, str):
+            if inspect.isclass(key):
+                key = key.__name__
+            else:
+                raise ValueError('key parameter must be a string or a class')
+
+        for entries in self._dependencies.values():
+            for idx, value in enumerate(entries):
+                entry_key, entry_value = value
+                if entry_key == key:
+                    entries[idx] = (entry_key, newvalue)
+
+        self._resolve_ordering()
+
+    def _resolve_ordering(self):
+        ordered_elements = []
+
+        existing_dependencies = set(self._inserted_keys) | set(self.DEPENDENCY_HEADS)
+        dependencies_without_heads = set(self._dependencies.keys()) - set(self.DEPENDENCY_HEADS)
+
+        # All entries that depend on a missing entry are converted
+        # to depend from None so they end up being in the middle.
+        dependencies = {}
+        for dependency in itertools.chain(self.DEPENDENCY_HEADS, dependencies_without_heads):
+            entries = self._dependencies.get(dependency, [])
+            if dependency not in existing_dependencies:
+                dependency = None
+            dependencies.setdefault(dependency, []).extend(entries)
+
+        # Resolve the dependencies and generate the ordered elements.
+        visit_queue = deque((head, head) for head in self.DEPENDENCY_HEADS)
+        while visit_queue:
+            current_key, current_obj = visit_queue.popleft()
+            if current_key not in self.DEPENDENCY_HEADS:
+                ordered_elements.append((current_key, current_obj))
+
+            element_dependencies = dependencies.pop(current_key, [])
+            visit_queue.extendleft(reversed(element_dependencies))
+
+        self._ordered_elements = ordered_elements

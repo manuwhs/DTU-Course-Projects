@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/series-label.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Charts </title>
+    <link rel="stylesheet" type="text/css" href="./static/content/highcharts_style.css">
+</head>
+
+<body>
+
+    <h2>Results of the vote</h2>
+    <br />
+    <p>Here is the time: {{ result.time[0] }}</p>
+    <p>Here is my Temperature: {{ result.temperature[0] }}</p>
+    <p>Here is my ph-Value: {{ result.phVal[0] }}</p>
+    <p>Here is my Pressure: {{ result.pressure[0] }}</p>
+    <p>Here is my Conductivity: {{  result.conductivity[0] *1000}}</p>
+    <br />
+
+      <form action = "http://localhost:5555/get_cleaning_process_by_id" method = "post">
+         <p>Enter Cleaning ID:</p>
+         <p><input type = "text" name = "cleaning_id" value = "{{  result.cleaning_id}}"/> </p>
+         <p><input type = "submit" value = "submit" /></p>
+      </form>
+
+
+    <div id="container"></div>
+
+
+
+</body>
+</html>
+
+
+<script>
+Highcharts.chart('container', {
+
+    title: {
+        text: 'IoTubes sensor values'
+    },
+
+    subtitle: {
+        text: 'Sensor 1'
+    },
+
+    yAxis: {
+        title: {
+            text: 'Units (S)'
+        }
+    },
+	xAxis: {
+		type: 'datetime',
+		dateTimeLabelFormats: { // don't display the dummy year
+			month: '%e. %b',
+			year: '%b'
+		},
+		title: {
+			text: 'Date'
+		}
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'middle'
+    },
+
+    plotOptions: {
+        series: {
+            label: {
+                connectorAllowed: false
+            },
+ 
+        }
+    },
+    series: [{
+      name: 'Installation',
+      data: 
+		{{ result.time}}
+    }],
+
+//    series: [{
+//        name: 'Installation',
+//        data: [[Date.UTC(1970, 10, 25,0), 0],
+//            [Date.UTC(1970, 10, 25,1), 0.25],
+//            [Date.UTC(1970, 10, 25,3), 1.41],
+//            [Date.UTC(1970, 10, 25,8), 1.64]]
+//    }],
+
+    responsive: {
+        rules: [{
+            condition: {
+                maxWidth: 500
+            },
+            chartOptions: {
+                legend: {
+                    layout: 'horizontal',
+                    align: 'center',
+                    verticalAlign: 'bottom'
+                }
+            }
+        }]
+    }
+
+});
+
+</script>

@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>5abb1e62-21db-4657-946c-f76c14dd78e1</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{789894c7-04a9-4a11-a6b5-3f4435165112};{1b580a1a-fdb3-4b32-83e1-6407eb2722e6};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>runserver.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Web launcher</LaunchProvider>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+    <Name>myFlaskWebProject</Name>
+    <RootNamespace>myFlaskWebProject</RootNamespace>
+    <InterpreterId>MSBuild|env_new|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="config_cosmos.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="forms.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="config_mysql.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="myFlaskWebProject\SQL_lib.py" />
+    <Compile Include="ptvs_virtualenv_proxy.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="runserver.py" />
+    <Compile Include="myFlaskWebProject\__init__.py" />
+    <Compile Include="myFlaskWebProject\views.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="myFlaskWebProject\" />
+    <Folder Include="myFlaskWebProject\static\" />
+    <Folder Include="myFlaskWebProject\static\content\" />
+    <Folder Include="myFlaskWebProject\static\fonts\" />
+    <Folder Include="myFlaskWebProject\static\icons\" />
+    <Folder Include="myFlaskWebProject\static\js\" />
+    <Folder Include="myFlaskWebProject\static\lib\" />
+    <Folder Include="myFlaskWebProject\static\lib\tabulator-v3.5\" />
+    <Folder Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\" />
+    <Folder Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\" />
+    <Folder Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\bootstrap\" />
+    <Folder Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\semantic-ui\" />
+    <Folder Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\js\" />
+    <Folder Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\" />
+    <Folder Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\" />
+    <Folder Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\" />
+    <Folder Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\" />
+    <Folder Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\bootstrap\" />
+    <Folder Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\semantic-ui\" />
+    <Folder Include="myFlaskWebProject\static\scripts\" />
+    <Folder Include="myFlaskWebProject\templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="myFlaskWebProject\static\icons\fail.png" />
+    <Content Include="myFlaskWebProject\static\icons\pass.png" />
+    <Content Include="myFlaskWebProject\static\js\conducchart.js" />
+    <Content Include="myFlaskWebProject\static\js\graph.js" />
+    <Content Include="myFlaskWebProject\static\js\HelloWorld.jsx" />
+    <Content Include="myFlaskWebProject\static\js\livetemp.js" />
+    <Content Include="myFlaskWebProject\static\js\phchart.js" />
+    <Content Include="myFlaskWebProject\static\js\presschart.js" />
+    <Content Include="myFlaskWebProject\static\js\react-dom.js" />
+    <Content Include="myFlaskWebProject\static\js\react.js" />
+    <Content Include="myFlaskWebProject\static\js\summarytable.js" />
+    <Content Include="myFlaskWebProject\static\js\tempchart.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\.gitignore" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\bower.json" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\bootstrap\tabulator_bootstrap.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\bootstrap\tabulator_bootstrap.min.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\bootstrap\tabulator_bootstrap.min.css.map" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\bootstrap\tabulator_bootstrap4.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\bootstrap\tabulator_bootstrap4.min.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\bootstrap\tabulator_bootstrap4.min.css.map" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\semantic-ui\tabulator_semantic-ui.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\semantic-ui\tabulator_semantic-ui.min.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\semantic-ui\tabulator_semantic-ui.min.css.map" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator.min.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator.min.css.map" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator_midnight.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator_midnight.min.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator_midnight.min.css.map" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator_modern.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator_modern.min.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator_modern.min.css.map" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator_simple.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator_simple.min.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator_simple.min.css.map" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator_site.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator_site.min.css" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\css\tabulator_site.min.css.map" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\js\tabulator.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\dist\js\tabulator.min.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\gulpfile.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\LICENSE" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\package.json" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\README.md" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\cell.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\column.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\column_manager.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\core.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\accessor.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\ajax.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\calculation_colums.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\clipboard.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\comms.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\download.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\edit.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\filter.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\format.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\frozen_columns.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\frozen_rows.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\group_rows.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\history.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\html_table_import.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\keybindings.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\layout.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\localize.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\moveable_columns.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\moveable_rows.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\mutator.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\page.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\persistence.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\resize_columns.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\resize_rows.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\resize_table.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\responsive_layout.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\select_row.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\sort.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions\validate.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\extensions_enabled.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\footer_manager.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\jquery_wrapper.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\polyfills.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\row.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\js\row_manager.js" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\bootstrap\functions4.scss" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\bootstrap\tabulator_bootstrap.scss" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\bootstrap\tabulator_bootstrap4.scss" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\bootstrap\variables.scss" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\bootstrap\variables4.scss" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\semantic-ui\tabulator_semantic-ui.scss" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\semantic-ui\variables.scss" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\semantic-ui\variables_table.scss" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\tabulator.scss" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\tabulator_midnight.scss" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\tabulator_modern.scss" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\tabulator_simple.scss" />
+    <Content Include="myFlaskWebProject\static\lib\tabulator-v3.5\src\scss\tabulator_site.scss" />
+    <Content Include="myFlaskWebProject\static\web.config" />
+    <Content Include="myFlaskWebProject\templates\clear.html" />
+    <Content Include="myFlaskWebProject\templates\results.html" />
+    <Content Include="myFlaskWebProject\templates\create.html" />
+    <Content Include="myFlaskWebProject\templates\profile.html" />
+    <Content Include="myFlaskWebProject\templates\results_chart.html" />
+    <Content Include="myFlaskWebProject\templates\summary.html" />
+    <Content Include="web.config" />
+    <None Include="mytubes - Web Deploy.pubxml" />
+    <Content Include="requirements.txt" />
+    <Content Include="myFlaskWebProject\static\content\bootstrap.css" />
+    <Content Include="myFlaskWebProject\static\content\bootstrap.min.css" />
+    <Content Include="myFlaskWebProject\static\content\site.css" />
+    <Content Include="myFlaskWebProject\static\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="myFlaskWebProject\static\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="myFlaskWebProject\static\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="myFlaskWebProject\static\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="myFlaskWebProject\static\scripts\bootstrap.js" />
+    <Content Include="myFlaskWebProject\static\scripts\bootstrap.min.js" />
+    <Content Include="myFlaskWebProject\static\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="myFlaskWebProject\static\scripts\jquery-1.10.2.js" />
+    <Content Include="myFlaskWebProject\static\scripts\jquery-1.10.2.min.js" />
+    <Content Include="myFlaskWebProject\static\scripts\jquery-1.10.2.min.map" />
+    <Content Include="myFlaskWebProject\static\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="myFlaskWebProject\static\scripts\jquery.validate.js" />
+    <Content Include="myFlaskWebProject\static\scripts\jquery.validate.min.js" />
+    <Content Include="myFlaskWebProject\static\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="myFlaskWebProject\static\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="myFlaskWebProject\static\scripts\modernizr-2.6.2.js" />
+    <Content Include="myFlaskWebProject\static\scripts\respond.js" />
+    <Content Include="myFlaskWebProject\static\scripts\respond.min.js" />
+    <Content Include="myFlaskWebProject\static\scripts\_references.js" />
+    <Content Include="myFlaskWebProject\templates\help.html" />
+    <Content Include="myFlaskWebProject\templates\contact.html" />
+    <Content Include="myFlaskWebProject\templates\index.html" />
+    <Content Include="myFlaskWebProject\templates\layout.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env_new\">
+      <Id>env_new</Id>
+      <Version>2.7</Version>
+      <Description>env_new (Python 2.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Web.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

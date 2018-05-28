@@ -1,0 +1,5 @@
+nine
+
+[testing]
+babel
+nose

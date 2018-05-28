@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link href="/static/lib/tabulator-v3.5/dist/css/bootstrap/tabulator_bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% extends "layout.html" %}
+
+    {% block content %}
+
+    <h3 style="margin-bottom:1cm;">The cleaning procedures at a glance:</h3>
+    <script type="text/javascript" src="/static/lib/tabulator-v3.5/dist/js/tabulator.min.js"></script>
+    <script>
+    //    var tabledata = [
+    //   { id: 1, "name": "ChrisWild", "status": "Progress...", "user": "WildC", "date": "12/08/2017", "temp": "10", "ph": "5", "con": "0,1"},
+    //   { id: 2, name: "Mary May", status: "PASS", user: "WildC", date: "14/05/1982", temp: "15", ph: "4", con: "0,1"},
+    //   { id: 3, name: "Christine Lobowski", status: "PASS", user: "WildC", date: "22/05/1982", temp: "30", ph: "25", con: "0,1"},
+    //   { id: 4, name: "Brendon Philips", status: "PASS", user: "WildC", date: "01/08/1980", temp: "30", ph: "15", con: "0,6" },
+    //   { id: 5, name: "Margret Marmajuke", status: "PASS", user: "WildC", date: "31/01/1999", temp: "30", ph: "5", con: "0,4" }
+    //    ];
+        var tabledata = {{ sum |safe }}
+        console.log(tabledata)
+    </script>
+    <div id="summary-table"></div>
+    <script src="../static/js/summarytable.js"></script>
+
+    {% endblock %}
+</body>
+</html >
